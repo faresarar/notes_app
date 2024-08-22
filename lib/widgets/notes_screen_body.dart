@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'custom_note_item.dart';
+import 'notes_list_view.dart';
 
 class NotesScreenBody extends StatelessWidget {
   const NotesScreenBody({super.key});
@@ -9,7 +9,7 @@ class NotesScreenBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Column(
       children: [
-        CustomNoteItem(),
+        Expanded(child: NotesListView()),
       ],
     );
   }
