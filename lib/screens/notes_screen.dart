@@ -25,6 +25,10 @@ class NotesScreen extends StatelessWidget {
         centerTitle: true,
       ),
       body: const NotesScreenBody(),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: const Icon(Icons.add),
+      ),
     );
   }
 }
