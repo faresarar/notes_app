@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../widgets/add_note_bottom_sheet.dart';
+import '../widgets/custom_app_bar.dart';
 import '../widgets/notes_screen_body.dart';
 
 class NotesScreen extends StatelessWidget {
@@ -9,21 +10,9 @@ class NotesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        elevation: 7,
-        title: const Text(
-          "Notes",
-          style: TextStyle(
-            fontSize: 32,
-          ),
-        ),
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.search),
-          )
-        ],
-        centerTitle: true,
+      appBar: const CustomAppBar(
+        title: 'Notes',
+        icon: Icons.search,
       ),
       body: const NotesScreenBody(),
       floatingActionButton: FloatingActionButton(
@@ -33,8 +22,8 @@ class NotesScreen extends StatelessWidget {
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(16),
             ),
-            builder: (context){
-              return const AddNoteBottomSheet() ;
+            builder: (context) {
+              return const AddNoteBottomSheet();
             },
           );
         },
@@ -43,4 +32,3 @@ class NotesScreen extends StatelessWidget {
     );
   }
 }
-
