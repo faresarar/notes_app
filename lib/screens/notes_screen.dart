@@ -10,6 +10,7 @@ class NotesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: const CustomAppBar(
         title: 'Notes',
         icon: Icons.search,
@@ -18,6 +19,7 @@ class NotesScreen extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           showModalBottomSheet(
+            isScrollControlled:true ,
             context: context,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(16),
