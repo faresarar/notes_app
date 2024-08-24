@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'custom_text_field.dart';
+import 'custom_text_form_field.dart';
 
 class EditNoteScreenBody extends StatelessWidget {
   const EditNoteScreenBody({super.key});
@@ -11,11 +11,11 @@ class EditNoteScreenBody extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 24),
       child: Column(
         children: [
-          CustomTextField(
+          CustomTextFormField(
             hint: "Title",
           ),
           SizedBox(height: 16),
-          CustomTextField(
+          CustomTextFormField(
             hint: "Content",
             maxLines: 5,
           ),
