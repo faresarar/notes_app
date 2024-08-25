@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../models/note_model.dart';
 import 'custom_text_form_field.dart';
+import 'edit_note_colors_list.dart';
 
 class EditNoteScreenBody extends StatefulWidget {
   const EditNoteScreenBody({super.key, required this.noteModel});
@@ -36,6 +37,8 @@ class _EditNoteScreenBodyState extends State<EditNoteScreenBody> {
               content = value;
             },
           ),
+          const SizedBox(height: 16),
+          EditNoteColorsList(noteModel: widget.noteModel)
         ],
       ),
     );
