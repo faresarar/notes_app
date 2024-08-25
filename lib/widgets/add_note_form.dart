@@ -4,6 +4,7 @@ import 'package:intl/intl.dart';
 
 import '../cubits/add_note_cubit/add_note_cubit.dart';
 import '../models/note_model.dart';
+import 'color_list_view.dart';
 import 'custom_button.dart';
 import 'custom_text_form_field.dart';
 
@@ -45,10 +46,10 @@ class _AddNoteFormState extends State<AddNoteForm> {
               subTitle = value;
             },
           ),
+          const ColorListView(),
 
           /// don't use Spacer() in SingleChildScrollView() ,
           const SizedBox(height: 16),
-
           BlocBuilder<AddNoteCubit, AddNoteState>(
             builder: (context, state) {
               return CustomButton(
