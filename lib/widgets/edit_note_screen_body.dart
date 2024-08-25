@@ -1,23 +1,40 @@
 import 'package:flutter/material.dart';
 
+import '../models/note_model.dart';
 import 'custom_text_form_field.dart';
 
-class EditNoteScreenBody extends StatelessWidget {
-  const EditNoteScreenBody({super.key});
+class EditNoteScreenBody extends StatefulWidget {
+  const EditNoteScreenBody({super.key, required this.noteModel});
+  final NoteModel noteModel;
+
+  @override
+  State<EditNoteScreenBody> createState() => _EditNoteScreenBodyState();
+}
+
+class _EditNoteScreenBodyState extends State<EditNoteScreenBody> {
+  String? title;
+
+  String? content;
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.symmetric(horizontal: 24),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 24),
       child: Column(
         children: [
           CustomTextFormField(
-            hint: "Title",
+            hint: widget.noteModel.title,
+            onChanged: (value) {
+              title = value;
+            },
           ),
-          SizedBox(height: 16),
+          const SizedBox(height: 16),
           CustomTextFormField(
-            hint: "Content",
+            hint: widget.noteModel.subTitle,
             maxLines: 5,
+            onChanged: (value) {
+              content = value;
+            },
           ),
         ],
       ),

@@ -7,7 +7,7 @@ import '../screens/edit_note_screen.dart';
 
 class CustomNoteItem extends StatelessWidget {
   const CustomNoteItem({super.key, required this.noteModel});
-  final NoteModel noteModel ;
+  final NoteModel noteModel;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -16,7 +16,9 @@ class CustomNoteItem extends StatelessWidget {
           context,
           MaterialPageRoute(
             builder: (context) {
-              return const EditNoteScreen();
+              return EditNoteScreen(
+                noteModel: noteModel,
+              );
             },
           ),
         );
@@ -34,7 +36,7 @@ class CustomNoteItem extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             ListTile(
-              title:  Padding(
+              title: Padding(
                 padding: const EdgeInsets.only(top: 16),
                 child: Text(
                   noteModel.title,

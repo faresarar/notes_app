@@ -7,9 +7,12 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     super.key,
     required this.title,
     required this.icon,
+    this.onPressed,
   });
   final String title;
   final IconData icon;
+  final void Function()? onPressed;
+
   @override
   Widget build(BuildContext context) {
     return AppBar(
@@ -22,8 +25,8 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       ),
       actions: [
         IconButton(
-          onPressed: () {},
-          icon: CustomIcon(icon:icon),
+          onPressed: onPressed,
+          icon: CustomIcon(icon: icon),
         )
       ],
       centerTitle: true,
